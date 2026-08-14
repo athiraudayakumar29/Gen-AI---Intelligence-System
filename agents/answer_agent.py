@@ -27,6 +27,7 @@ def answer_node(state: dict) -> dict:
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": user_prompt}
     ])
+    
 
     state["answer"] = llm_result["text"]
     state["tokens_used"] = llm_result["tokens_used"]
