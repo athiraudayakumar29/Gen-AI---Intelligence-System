@@ -1,0 +1,40 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to ACR
+        uses: azure/docker-login@v1
+        with:
+          login-server: aconrenterpriseagent.azurecr.io
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+
+      - name: Build and push backend
+        run: |
+          docker build -t aconrenterpriseagent.azurecr.io/backend:${{ github.sha }} -f backend/Dockerfile .
+          docker push aconrenterpriseagent.azurecr.io/backend:${{ github.sha }}
+
+      - name: Build and push mcp-tools
+        run: |
+          docker build -t aconrenterpriseagent.azurecr.io/mcp-tools:${{ github.sha }} ./mcp_server
+          docker push aconrenterpriseagent.azurecr.io/mcp-tools:${{ github.sha }}
+
+      - name: Deploy backend
+        uses: azure/CLI@v2
+        with:
+          inlineScript: |
+            az containerapp update --name backend --resource-group rg-enterprise-ai-agent --image aconrenterpriseagent.azurecr.io/backend:${{ github.sha }}
+
+      - name: Deploy mcp-tools
+        uses: azure/CLI@v2
+        with:
+          inlineScript: |
+            az containerapp update --name mcp-tools --resource-group rg-enterprise-ai-agent --image aconrenterpriseagent.azurecr.io/mcp-tools:${{ github.sha }}

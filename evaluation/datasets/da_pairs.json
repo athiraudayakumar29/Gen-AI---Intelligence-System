@@ -1,0 +1,45 @@
+[
+  {
+    "id": "qa-001",
+    "question": "What does the leave policy say about public holidays?",
+    "expected_keywords": ["gazetted", "public holidays", "work location"],
+    "expected_sources": ["Leave_Policy.pdf"],
+    "category": "rag"
+  },
+  {
+    "id": "qa-002",
+    "question": "Show me total sales for Q1",
+    "expected_keywords": ["Q1", "revenue", "total"],
+    "expected_sources": [],
+    "category": "sql"
+  },
+  {
+    "id": "qa-003",
+    "question": "Compare Q1 and Q2 revenue by region",
+    "expected_keywords": ["North America", "Europe", "Q1", "Q2"],
+    "expected_sources": [],
+    "category": "sql"
+  },
+  {
+    "id": "qa-004",
+    "question": "Generate a report on Q1 and Q2 sales performance by region",
+    "expected_keywords": ["revenue", "region", "report"],
+    "expected_sources": [],
+    "category": "report"
+  },
+  {
+    "id": "qa-005",
+    "question": "Create a GitHub issue summarizing this bug",
+    "expected_keywords": [],
+    "expected_sources": [],
+    "category": "mcp"
+  },
+  {
+    "id": "qa-006",
+    "question": "What is the capital of France?",
+    "expected_keywords": [],
+    "expected_sources": [],
+    "category": "rag",
+    "expect_no_answer": true
+  }
+]

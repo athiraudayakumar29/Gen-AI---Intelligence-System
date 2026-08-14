@@ -1,0 +1,28 @@
+Facility Equipment Maintenance Policy
+
+1. Overview
+This document outlines the standard maintenance procedures for HVAC and elevator
+systems across all DAMAC managed properties.
+
+2. HVAC Maintenance Schedule
+HVAC units must be inspected on a quarterly basis. Filters should be replaced every
+90 days. Refrigerant levels must be checked twice a year, in March and September.
+
+3. Elevator Maintenance Schedule
+Elevators require monthly safety inspections performed by a certified technician.
+Any elevator that records more than 3 unscheduled stops in a single month must be
+taken out of service and inspected within 24 hours. Cable tension checks are required
+every 6 months.
+
+4. Predictive Maintenance Guidelines
+Facilities equipped with IoT vibration and temperature sensors should flag any
+deviation greater than 15% from the equipment baseline. When flagged, maintenance
+staff have 48 hours to investigate before escalation to the regional facilities manager.
+Historical data shows catching deviations early reduces unplanned downtime by 30-35%.
+
+5. Vendor Response Times
+For HVAC emergencies, the vendor must respond within 4 hours.
+For elevator emergencies, response time must not exceed 1 hour.
+
+6. Reporting
+All maintenance activity must be logged within 24 hours of completion.
