@@ -22,10 +22,10 @@ jobs:
           docker build -t aconrenterpriseagent.azurecr.io/backend:${{ github.sha }} -f backend/Dockerfile .
           docker push aconrenterpriseagent.azurecr.io/backend:${{ github.sha }}
 
-        - name: Build and push mcp-tools
+      - name: Build and push mcp-tools
         run: |
-        docker build -t aconrenterpriseagent.azurecr.io/mcp-tools:${{ github.sha }} -f mcp_server/Dockerfile .
-        docker push aconrenterpriseagent.azurecr.io/mcp-tools:${{ github.sha }}
+          docker build -t aconrenterpriseagent.azurecr.io/mcp-tools:${{ github.sha }} -f mcp_server/Dockerfile .
+          docker push aconrenterpriseagent.azurecr.io/mcp-tools:${{ github.sha }}
 
       - name: Deploy backend
         uses: azure/CLI@v2
